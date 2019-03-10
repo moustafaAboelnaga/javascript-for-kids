@@ -1,0 +1,208 @@
+
+
+/* ===========================
+Author's Moustafa Mahmoud Abo elnaga
+   ========================================================================== */
+
+@import url(https://fonts.googleapis.com/css?family=Londrina+Solid|Nunito:400,300);
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #ecf0f1;
+}
+
+a {
+  color: #27ae60;
+  text-decoration: none;
+  font-size: 14px;
+}
+a:hover {
+  color: #86d1ff;
+}
+
+.hangman {
+  font-family: "Londrina Solid", cursive;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #27ae60;
+  font-weight: 300;
+}
+
+p {
+  margin-bottom: 20px;
+  color: #27ae60;
+  line-height: 1.3;
+}
+
+@keyframes letteranim {
+  50% {
+    transform: translateY(-5px) scale(1.05);
+  }
+}
+.letter {
+  display: inline-block;
+  color: transparent;
+  border-bottom: 5px solid #7f8c8d;
+  margin: 0 10px;
+  font-size: 50px;
+  padding: 10px;
+  transition: 0.5s;
+  text-transform: uppercase;
+}
+
+.word {
+  display: block;
+  white-space: nowrap;
+}
+
+.correct {
+  color: #27ae60;
+  text-shadow: 1px 2px 0 #2ecc71;
+  animation: letteranim 0.3s ease;
+}
+
+.guessForm {
+  margin: 80px auto 0;
+}
+.guessForm input,
+.guessForm .guessButton,
+.guessForm .giveUpBtn {
+  font-family: "Londrina Solid", cursive;
+}
+.guessForm input[type="text"] {
+  outline: none;
+  padding: 10px;
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-right: 5px;
+  border: 1px solid #aaa;
+  color: gray;
+}
+.guessForm .guessButton{
+  border: none;
+  font-size: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #27ae60;
+  color: white;
+  transition: 0.3s;
+  margin: 10px 0;
+  text-shadow: 1px 2px 0 #2ecc71;
+	border-radius: 20px;
+}
+ .guessForm .giveUpBtn {
+    border: none;
+    font-size: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #FF4D4D;
+    color: white;
+    transition: 0.3s;
+    margin: 10px 0;
+    text-shadow: 1px 2px 0 darkred;
+	     border-radius: 20px;
+}
+.guessForm .guessButton:hover, 
+.guessForm .giveUpBtn:hover {
+	    border-radius: 0px;
+}
+
+.wrongLetters {
+  font-size: 20px;
+}
+.wrongLetters p {
+  margin-bottom: 10px;
+}
+.wrongLetters li {
+    display: inline-block;
+    font-size: 30px;
+    background: #ff4d4d;
+    text-shadow: 1px 2px 0 red;
+    padding: 0;
+    color: white;
+    text-transform: uppercase;
+    margin-right: 10px;
+    animation: letteranim 0.3s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px rgba(40,40,40,0.4);
+}
+
+.message {
+    display: none;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #2ecc71;
+    z-index: 12402402;
+    height: 130px!important;
+}
+.message h1 {
+  display: none;
+  color: white;
+  text-shadow: 1px 2px 0 #ccc;
+}
+.message .highlight {
+  color: yellow;
+  text-transform: capitalize;
+}
+.message .text {
+  color: white;
+  font-size: 30px;
+  display: none;
+}
+.message .text p {
+  color: white;
+}
+.message .text .highlight {
+  font-size: 40px;
+}
+.message .muted {
+  margin: 20px auto;
+  color: #86d1ff;
+}
+
+.button {
+  display: none;
+  margin: 10px 0;
+  border: none;
+  font-size: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #34cd39;
+  color: white;
+  transition: 0.3s;
+  text-shadow: 1px 2px 0 #2eb933;
+  font-family: "Londrina Solid", cursive;
+}
+.button:hover {
+  background: #71dc75;
+}
+.container.all-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.guess {
+    margin-bottom: 30px;
+}
